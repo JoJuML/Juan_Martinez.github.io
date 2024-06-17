@@ -4,9 +4,9 @@
 
   // Procesar el formulario
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
+    $name = $_POST["name"];
     $email = $_POST["email"];
-    $mensaje = $_POST["mensaje"];
+    $message = $_POST["message"];
 
     // Enviar el correo electrónico
     $headers = "From: $email\r\n";
@@ -16,11 +16,11 @@
 
     //$mensaje Completo = ;
 
-    if (mail($mail_to, $subject, "Nombre: $nombre\r\nEmail: $email\r\nMensaje: $mensaje",$headers))
+    if (mail($mail_to, $subject, "Nombre: $name\r\nEmail: $email\r\nMensaje: $message",$headers))
     {
-      echo "Mensaje enviado con éxito";
+      echo "Message sent successfully";
     } else {
-      echo "Error al enviar el mensaje";
+      echo "Error sending Message";
     }
   }
 ?>
